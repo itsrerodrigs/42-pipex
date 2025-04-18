@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renrodri <renrodri@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:37:30 by renrodri          #+#    #+#             */
-/*   Updated: 2025/02/13 17:13:07 by renrodri         ###   ########.fr       */
+/*   Updated: 2025/04/17 23:24:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@ void	cleanup(char **args, char *path, char **paths)
 			free(args[i]);
 		free(args);
 	}
-	/*while (args[++i])
-		free(args[i]);
-	free(args);*/
 }
 
 char	*find_command_path(char *cmd, char **envp)
@@ -81,11 +78,6 @@ void	execute_command(char **cmd, char **envp)
 	{
 		perror("Error");
 		exit(127);
-	}
-	if (execve(path, cmd, envp) == -1)
-	{
-		perror("exceve failed");
-		exit(126);
 	}
 }
 

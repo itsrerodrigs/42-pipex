@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renrodri <renrodri@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 13:37:47 by renrodri          #+#    #+#             */
-/*   Updated: 2025/02/13 17:23:21 by renrodri         ###   ########.fr       */
+/*   Updated: 2025/04/17 23:24:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,49 +87,3 @@ int	main(int argc, char **argv, char **envp)
 	cleanup(cmd2, NULL, NULL);
 	return (0);
 }
-
-/*int	main(int argc, char **argv, char **envp)
-{
-	pid_t	pid;
-	int		fd[2];
-	char	*cmd1;
-	char	*cmd2;
-
-	if (argc != 5)
-		display_argument_error();
-	if (pipe(fd) == -1)
-		error();
-	
-	cmd1 = ft_split(argv[2], ' ');
-	cmd2 = ft_split(argv[3], ' ');
-
-	pid = fork();
-	if (pid == -1)
-		error();
-	if (pid == 0)
-		handle_child_process(argv[1], cmd1, envp, fd);
-	else
-		waitpid(pid, NULL, 0);
-		handle_parent_process(argv[4], cmd2, envp, fd);
-	
-	cleanup(cmd1, NULL, NULL);
-	cleanup(cmd2, NULL, NULL);
-
-	return (0);
-	{
-		if (pipe(fd) == -1)
-			error();
-		pid = fork();
-		if (pid == -1)
-			error();
-		if (pid == 0)
-			handle_child_process(argv[1], ft_split(argv[2], ' '), envp, fd);
-		else
-			waitpid(pid, NULL, 0);
-		handle_parent_process(argv[4], ft_split(argv[3], ' '), envp, fd);
-	}
-	else
-	{
-		display_argument_error();
-	}
-	return (0);*/
